@@ -12,5 +12,26 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map((line) => {
+    //we need to return iterated array using map, then i need to declare parameters where each element goes.
+    const tokens = line.split(" ");
+    //we need to split to the parameters by using .split
+    const capitalizedTokens = tokens.map(
+      // we need to do declaration, we need use .map to the previous function
+      (token) => token.charAt(0).toUpperCase() + token.slice(1)
+    ); //charAt breaks down the elements to 0,1,2. (.toUpperCase changes to upper case)
+    const response = capitalizedTokens.join(" ");
+    // .join is used to join the new function that was modified and splited
+    return response;
+  });
+};
+
+
+
+
+
+
+
+
+
+
